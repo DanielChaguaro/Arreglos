@@ -1,5 +1,6 @@
 #include<stdio.h>
 
+void Fmayormenor(double v[],int l);
 int main(){
 
 double v1[]={
@@ -202,6 +203,23 @@ double v1[]={
 
 int longitud=sizeof(v1)/sizeof(v1[0]);
 
-printf("el tamaño del vector es: %d",longitud);
-
+printf("el tamano del vector es: %d \n",longitud);
+Fmayormenor(v1,longitud);
+}
+void Fmayormenor(double v[],int l){
+    double a=100;
+    int b=0;
+    int q,p;
+    for(int i=0;i<l;i++){
+        if(v[i]>b){
+            b=v[i];
+            q=i;
+        }
+        if(v[i]<a){
+            a=v[i];
+            p=i;
+        }
+    }
+    printf("El valor mayor es: %d en la posicion: %d \n",b,q+1);
+    printf("El valor menor es: %f en la posicion: %d \n",a,p+1);
 }
